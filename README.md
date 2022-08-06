@@ -1,5 +1,9 @@
 # PracticaAngular
+Practicas de Angular.
+La idea es separar los temas en modulos o componentes.
 
+
+# CLI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 ## Development server

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlogFormulariosModule } from './blog-formularios/blog-formularios.module';
 import { PracticaObservableModule } from './practica-observable/practica-observable.module';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PracticaObservableModule } from './practica-observable/practica-observa
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PracticaObservableModule
+    PracticaObservableModule,
+    BlogFormulariosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

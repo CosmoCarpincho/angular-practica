@@ -1,0 +1,61 @@
+<div class="container">
+  <form (ngSubmit)="submit()" #forma="ngForm">
+    <label for="name"><b>Nombre</b></label>
+    <input
+      type="text"
+      #name="ngModel"
+      [(ngModel)]="register.name"
+      placeholder="Introduzca su nombre de pila"
+      name="name"
+      minlength="5"
+      class="form-control"
+      [ngClass]="{ 'is-valid': !name.invalid, 'is-invalid': name.invalid }"
+    />
+
+    <div
+      class="invalid-feedback"
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+    >
+
+    <!-- Aca deberia poner name.errors.required segun el blog pero no funciona
+      Sera porque es otra version de Angular, o faltara importar algun modulo?
+    -->
+      <div *ngIf="name.errors">
+        Introdzca un nombre de pila con 5 caracteres mínimo
+      </div>
+      <div *ngIf="name.errors">
+        Introduzca un nombre de pila válido por favor
+      </div>
+    </div>
+
+    <label for="email">Ingrese su email:</label>
+    <input
+      type="email"
+      #email="ngModel"
+      [(ngModel)]="register.email"
+      placeholder="Intrudizca su email"
+      name="email"
+      class="form-control"
+      required
+      [ngClass]="{'is-valid':!email.invalid, 'is-invalid': email.invalid}"
+      pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+"
+    />
+
+    <div class="invalid-feedback">
+      <div>
+        Introduzca un correo electrónico válido por favor
+      </div>
+      <div *ngIf="email.errors && email.errors">
+        El correo electrónico no sigue el formato correcto. Sigue este ejemplo:pepe@mail.com
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg">
+        <button type="submit" [disabled]="!forma.valid" class="signup-btn">
+          Iniciar sesión
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
